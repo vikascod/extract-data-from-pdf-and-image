@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PDFs</title>
+</head>
+<body>
+    <div>
+        <center>
+        <div>
+        <h1>Upload PDFs</h1>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="pdf_file" id="pdf_file" placeholder="Choose file">
+            <button>Submit</button>
+        </form>
+        </div>  
+        <div>
+            {% if extracted_data %}
+                <h2>Extracted Data</h2>
+                <p>{{ extracted_data }}</p>  
+            {% endif %}
+        </div>
+    </center>
+    </div>
+</body>
+</html>
